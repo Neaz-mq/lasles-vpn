@@ -4,7 +4,7 @@ const testimonials = [
         name: "Viezh Robert",
         location: "Warsaw, Poland",
         rating: 4.5,
-        comment: "Wow... I am very happy to use this VPN, it turned out to be more than my expectations and so far there have been no problems. LaslesVPN always the best",
+        comment: "Wow... I am very happy to use this VPN, it turned out to be more than my expectations and so far there have been no problems. HeavyVPN always the best",
         image: "./images/user1.png"
     },
     {
