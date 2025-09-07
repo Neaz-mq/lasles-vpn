@@ -143,3 +143,80 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+
+document.addEventListener('DOMContentLoaded', () => {
+  const scrollBtn = document.getElementById('scrollToTopBtn');
+
+  // Show button after user scrolls down 300px
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      scrollBtn.classList.remove('hidden');
+    } else {
+      scrollBtn.classList.add('hidden');
+    }
+  });
+
+  // Scroll smoothly to top on button click
+  scrollBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('scrollToTopBtn');
+
+  // Show/hide button logic (optional)
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+      btn.classList.remove('hidden');
+    } else {
+      btn.classList.add('hidden');
+    }
+
+    updateButtonBorderProgress();
+  });
+
+  // Scroll to top on click
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+function updateButtonBorderProgress() {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollProgress = Math.min(scrollTop / docHeight, 1);
+
+  const greenColor = '16, 185, 129'; // Tailwind emerald-500 rgb
+
+  // Max spread for the glowing ring (px)
+  const maxSpread = 16;
+
+  // Calculate spread and opacity scaled by scroll progress
+  const spread = scrollProgress * maxSpread;
+  const opacity = Math.min(scrollProgress * 1.5, 1); // Boost opacity a bit, max 1
+
+  // Multiple shadows for layered glow effect
+  const boxShadow = `
+    0 0 6px rgba(${greenColor}, ${opacity}),
+    0 0 ${spread}px rgba(${greenColor}, ${opacity * 0.7}),
+    0 0 ${spread * 2}px rgba(${greenColor}, ${opacity * 0.4})
+  `;
+
+  btn.style.boxShadow = boxShadow;
+}
+
+
+  // Initialize on page load
+  updateButtonBorderProgress();
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleBtn = document.getElementById("menu-toggle");
+  const menu = document.getElementById("menu");
+
+  toggleBtn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+  });
+});
+
