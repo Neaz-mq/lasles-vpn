@@ -1,12 +1,21 @@
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
-html{
+html {
     scroll-behavior: smooth;
     font-family: 'Rubik', sans-serif;
 }
 
+/* Global styles for light and dark mode */
+body {
+    @apply bg-white text-black;
+}
 
+.dark body {
+    @apply bg-gray-900 text-white;
+}
+
+/* Swiper pagination styles */
 .swiper-pagination-bullet {
     width: 15px;
     height: 15px;
@@ -21,3 +30,13 @@ html{
     border-radius: 10px;
     transition: width 0.3s ease;
 }
+
+/* Optional: Card dark mode override */
+.testimonial-card {
+    @apply bg-white border-gray-200;
+}
+
+.dark .testimonial-card {
+    @apply bg-gray-800 border-gray-600 text-gray-100;
+}
+
