@@ -137,6 +137,26 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.getElementById('theme-toggle-mobile');
+  const html = document.documentElement;
+
+  // Apply saved theme on load
+  if (localStorage.getItem('theme') === 'dark') {
+    html.classList.add('dark');
+    toggle.textContent = '☀️';
+  }
+
+  // Toggle theme
+  toggle.addEventListener('click', () => {
+    html.classList.toggle('dark');
+    const isDark = html.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    toggle.textContent = isDark ? '☀️' : '🌙';
+  });
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
   const yearSpan = document.getElementById('year');
   if (yearSpan) {
     yearSpan.textContent = new Date().getFullYear();
@@ -219,4 +239,3 @@ document.addEventListener("DOMContentLoaded", () => {
     menu.classList.toggle("hidden");
   });
 });
-
