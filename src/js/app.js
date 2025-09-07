@@ -211,27 +211,12 @@ function updateButtonBorderProgress() {
 });
 
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const menuToggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
-    const themeToggles = document.querySelectorAll('#theme-toggle, #theme-toggle-mobile');
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleBtn = document.getElementById("menu-toggle");
+  const menu = document.getElementById("menu");
 
-    // Toggle menu on mobile
-    menuToggle.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-    });
-
-    // Toggle dark mode and switch icons
-    themeToggles.forEach(toggle => {
-      toggle.addEventListener('click', () => {
-        const isDark = document.documentElement.classList.toggle('dark');
-
-        // Update all toggle icons
-        themeToggles.forEach(btn => {
-          btn.textContent = isDark ? '☀️' : '🌙';
-        });
-      });
-    });
+  toggleBtn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
   });
-
+});
 

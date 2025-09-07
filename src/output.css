@@ -16,6 +16,7 @@
     --color-amber-200: oklch(92.4% 0.12 95.746);
     --color-amber-400: oklch(82.8% 0.189 84.429);
     --color-amber-600: oklch(66.6% 0.179 58.318);
+    --color-yellow-500: oklch(79.5% 0.184 86.047);
     --color-green-100: oklch(96.2% 0.044 156.743);
     --color-green-500: oklch(72.3% 0.219 149.579);
     --color-green-900: oklch(39.3% 0.095 152.535);
@@ -891,6 +892,9 @@
   .text-white {
     color: var(--color-white);
   }
+  .text-yellow-500 {
+    color: var(--color-yellow-500);
+  }
   .underline {
     text-decoration-line: underline;
   }
@@ -1420,6 +1424,11 @@
     @media (width >= 64rem) {
       font-size: var(--text-6xl);
       line-height: var(--tw-leading, var(--text-6xl--line-height));
+    }
+  }
+  .lg\:text-\[1px\] {
+    @media (width >= 64rem) {
+      font-size: 1px;
     }
   }
   .lg\:text-\[14px\] {
